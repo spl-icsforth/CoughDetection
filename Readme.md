@@ -40,7 +40,9 @@ A folder named `CoughDetections` is created and all results are stored there. Fo
 -----	  
 
 ## License
-(To be filled)
+MIT 
+
+Copyright (c) 2021 **Nikonas Simou, Nikolaos Stefanakis, Konstantinos Psaroulakis**
 
 --------
 ### How to reference

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>532</width>
+    <width>530</width>
     <height>551</height>
    </rect>
   </property>
@@ -35,94 +35,6 @@ border-radius: 10px
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="btn_min">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>10</y>
-       <width>21</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{ 
-border:none; 
-border-radius: 7px; 
-background-color: rgb(85, 255, 127);
-}
-QPushButton:hover{
-background-color: rgb(85, 255, 127, 150);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_max">
-     <property name="geometry">
-      <rect>
-       <x>470</x>
-       <y>10</y>
-       <width>21</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{ 
-border:none; 
-border-radius: 7px; 
-background-color: rgb(200, 130, 0);
-}
-QPushButton:hover{
-background-color: rgb(200, 130, 0, 150);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btn_exit">
-     <property name="geometry">
-      <rect>
-       <x>500</x>
-       <y>10</y>
-       <width>21</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{ 
-border:none; 
-border-radius: 7px; 
-background-color: rgb(235, 0, 0);
-}
-QPushButton:hover{
-background-color: rgb(235,0,0, 150);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QFrame" name="LOGO">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>40</y>
-       <width>511</width>
-       <height>60</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(250,50, 50, 150);</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-    </widget>
     <widget class="QPushButton" name="btn_run">
      <property name="geometry">
       <rect>
@@ -150,9 +62,9 @@ background-color: rgb(88, 255, 107, 150);
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>109</y>
+       <y>80</y>
        <width>511</width>
-       <height>291</height>
+       <height>341</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -191,10 +103,10 @@ Directory</string>
      <widget class="QTextBrowser" name="wav_folder">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>10</y>
+        <x>26</x>
+        <y>100</y>
         <width>271</width>
-        <height>61</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -205,14 +117,14 @@ Directory</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;C:/Users/.../test_files&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[Please select a directory]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>240</y>
+        <x>350</x>
+        <y>70</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -221,30 +133,13 @@ p, li { white-space: pre-wrap; }
        <string>Number of threads:</string>
       </property>
      </widget>
-     <widget class="QPlainTextEdit" name="threads_num">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>240</y>
-        <width>51</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="plainText">
-       <string>12345
-</string>
-      </property>
-     </widget>
      <widget class="QTextBrowser" name="wavs">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>80</y>
+        <x>26</x>
+        <y>180</y>
         <width>271</width>
-        <height>141</height>
+        <height>121</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -255,8 +150,153 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Files to be processed:\n&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;abcd.wav&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[No directory selected]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Directory with wav files:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>160</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Files to be processed:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="num_of_threads">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>110</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>20</number>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>146</x>
+       <y>34</y>
+       <width>241</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(221, 249, 249)</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>531</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(101, 0, 152);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="btn_max">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>10</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{ 
+border:none; 
+border-radius: 7px; 
+background-color: rgb(200, 130, 0);
+}
+QPushButton:hover{
+background-color: rgb(200, 130, 0, 150);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_min">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>10</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{ 
+border:none; 
+border-radius: 7px; 
+background-color: rgb(85, 255, 127);
+}
+QPushButton:hover{
+background-color: rgb(85, 255, 127, 150);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_exit">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{ 
+border:none; 
+border-radius: 7px; 
+background-color: rgb(235, 0, 0);
+}
+QPushButton:hover{
+background-color: rgb(235,0,0, 150);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>

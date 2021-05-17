@@ -8,6 +8,52 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+citation = 'Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, "A Universal System for Cough Detection in Domestic Acoustic Environments" in EUSIPCO 2020.'
+
+def main(wav_folder, n_threads_to_use=4):
+
+    ''' Given as input a folder, this script searches for .wav files for cough 
+    instances. If a recording is long enough (more than maxDur) it will be process
+    ed by multiple threads simultaneously.
+
+    Parameters:
+        -t (int): Maximum number of threads used
+                    
+    Output:
+         Folder named `CoughDetections` is created and all results are stored there.
+         For each `.wav` file, if one or more coughs are detected:
+            1) A `.txt` file will be exported which contains each cough instance's 
+            timestamp as well as the corresponding level of confidence the 
+            classifier has. 
+            
+            2) Additionaly a `.wav` file containing all the cough detections 
+            concatenated, is exported
+'''
+    import os
+    import argparse
+    from tensorflow.keras.models import load_model
+    from pathlib import Path
+    import time
+    from ClipCoughDetector import ClipCoughDetector
+    
+    print('Using a maximum of',n_threads_to_use,' threads')
+    # os.environ['CUDA_VISIBLE_DEVICES'] = '-1' # force to use cpu
+    os.makedirs("CoughResults", exist_ok = True) 
+    wav_path_list = [
+        str(wav_path) for wav_path in Path(wav_folder).rglob('*.wav')]
+    
+    model = load_model('./rnn_mel_entire.hdf5')
+    timeStart = time.time()
+    cough_detector = ClipCoughDetector(model)
+        
+    for wav_path in wav_path_list:
+       cough_detector.getClipCoughs(wav_path,n_threads_to_use)
+    
+    print('Elapsed time: ',time.time()-timeStart,' seconds')
+
+
+
+
 class Ui_MainWindow(QtWidgets.QWidget):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -35,6 +81,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 "}")
         self.btn_run.setObjectName("btn_run")
         self.btn_run.setEnabled(False)
+        self.btn_run.clicked.connect(self.run_main)
 
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setGeometry(QtCore.QRect(10, 80, 511, 341))
@@ -124,7 +171,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 "}")
         self.btn_exit.setText("")
         self.btn_exit.setObjectName("btn_exit")
-        self.btn_exit.clicked.connect(QtCore.QCoreApplication.instance().quit)
+        self.btn_exit.clicked.connect(self.on_closing)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -169,6 +216,37 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.wavs.setText(files)
         #window.label_2.setText(file)
 
+
+    def on_closing(self):
+        import gc
+
+        reply = QtWidgets.QMessageBox.question(self, 'Message',
+            "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
+            QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
+
+        if reply == QtWidgets.QMessageBox.Yes:
+            print('Thank you for using our tool!')
+            QtCore.QCoreApplication.instance().quit()
+            gc.collect()
+            exit()
+
+
+        # if tkinter.messagebox.askokcancel("Quit", "Do you want to quit?"):
+
+
+
+    # def copy_citation(self):
+    #     self.parent.clipboard_clear()
+    #     self.parent.clipboard_append(citation)
+    #     self.parent.update() # the text will stay there after the window is closed
+    #     self.copied_lbl_txt.set("(Copied!)")
+        
+    def run_main(self):
+        global wav_folder, n_threads_to_use
+        wav_folder = self.wav_folder.toPlainText()
+        n_threads_to_use = int(self.num_of_threads.value())
+        QtCore.QCoreApplication.instance().quit()
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -176,5 +254,8 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    app.exec()
+    MainWindow.close()
+    print("Starting execution. Please wait...")
+    main(wav_folder, n_threads_to_use)
 

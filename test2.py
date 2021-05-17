@@ -251,6 +251,8 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
+    MainWindow.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+    MainWindow.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()

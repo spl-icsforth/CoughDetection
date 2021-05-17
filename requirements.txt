@@ -4,3 +4,4 @@ soundfile
 pandas
 librosa
 tensorflow >= 2.0
+PyQt5

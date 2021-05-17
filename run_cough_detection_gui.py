@@ -54,7 +54,8 @@ def main(wav_folder, n_threads_to_use=4):
 class Ui_MainWindow(QtWidgets.QWidget):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(530, 611)
+        MainWindow.resize(530, 610)
+        MainWindow.setFixedSize(self.size())
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -67,7 +68,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.btn_run = QtWidgets.QPushButton(self.frame)
-        self.btn_run.setGeometry(QtCore.QRect(160, 420, 201, 61))
+        self.btn_run.setGeometry(QtCore.QRect(156, 420, 220, 60))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.btn_run.setFont(font)
@@ -103,7 +104,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 "background-color: rgb(85, 255, 127);\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color: rgb(85, 255, 127, 150);\n"
+"background-color: rgba(85, 255, 127, 150);\n"
 "}")
         self.btn_dir.setObjectName("btn_dir")
         self.btn_dir.clicked.connect(self.select_dir)        
@@ -188,7 +189,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
 "background-color: rgb(235, 0, 0);\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color: rgb(235,0,0, 150);\n"
+"background-color: rgba(235,0,0, 150);\n"
 "}")
         self.btn_exit.setObjectName("btn_exit")
         self.btn_exit.clicked.connect(self.on_closing)
@@ -210,23 +211,24 @@ class Ui_MainWindow(QtWidgets.QWidget):
 "background-color: rgb(200, 130, 0);\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color: rgb(200, 130, 0, 150);\n"
+"background-color: rgba(200, 130, 0, 150);\n"
 "}")
         self.copy_citation.setObjectName("copy_citation")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.frame)
-        self.plainTextEdit.setGeometry(QtCore.QRect(0, 500, 511, 101))
+        self.copy_citation.clicked.connect(self.copy_citation_)
+        self.cite_label = QtWidgets.QPlainTextEdit(self.frame)
+        self.cite_label.setGeometry(QtCore.QRect(20, 500, 510, 100))
         font = QtGui.QFont()
         font.setFamily("Calibri")
         font.setPointSize(10)
         font.setItalic(True)
-        self.plainTextEdit.setFont(font)
-        self.plainTextEdit.setMouseTracking(False)
-        self.plainTextEdit.setReadOnly(True)
-        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.cite_label.setFont(font)
+        self.cite_label.setMouseTracking(False)
+        self.cite_label.setReadOnly(True)
+        self.cite_label.setObjectName("cite_label")
         self.btn_run.raise_()
         self.frame_2.raise_()
         self.frame_3.raise_()
-        self.plainTextEdit.raise_()
+        self.cite_label.raise_()
         self.copy_citation.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -236,7 +238,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btn_run.setText(_translate("MainWindow", "Run"))
+        self.btn_run.setText(_translate("MainWindow", "Run\n(Please select directory)"))
         self.btn_dir.setText(_translate("MainWindow", "Select\n"
 "Directory"))
         self.wav_folder.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -256,7 +258,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         self.btn_exit.setText(_translate("MainWindow", "X"))
         self.label_4.setText(_translate("MainWindow", "Cough Detection Tool (v 1.0)"))
         self.copy_citation.setText(_translate("MainWindow", "Copy citation"))
-        self.plainTextEdit.setPlainText(_translate("MainWindow", "Did you find this tool useful? Please cite as:\n"
+        self.cite_label.setPlainText(_translate("MainWindow", "Did you find this tool useful? Please cite as:\n"
 "Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, \"A Universal System for Cough Detection in Domestic Acoustic Environments\" in EUSIPCO 2020."))
 
     def minimize(self):
@@ -275,9 +277,10 @@ class Ui_MainWindow(QtWidgets.QWidget):
                 self.btn_run.setText("RUN")
             else:
                 files = "Files to be processed:\n"+"No .wav files found in selected directory."
-                self.btn_run.setText("RUN\nSelect a valid directory.")
+                self.btn_run.setText("RUN\n(Select a valid directory)")
                 self.btn_run.setEnabled(False)
             self.wavs.setText(files)
+            self.btn_dir.setText("Change\nDirectory")
         #window.label_2.setText(file)
 
 
@@ -295,10 +298,9 @@ class Ui_MainWindow(QtWidgets.QWidget):
             exit()
 
 
-    def copy_citation(self):
-        pass
-        # self.parent.clipboard_clear()
-        # self.parent.clipboard_append(citation)
+    def copy_citation_(self):
+        clipboard = QtWidgets.QApplication.clipboard()
+        clipboard.setText(citation)
         # self.parent.update() # the text will stay there after the window is closed
         # self.copied_lbl_txt.set("(Copied!)")
         
@@ -307,7 +309,6 @@ class Ui_MainWindow(QtWidgets.QWidget):
         wav_folder = self.wav_folder.toPlainText()
         n_threads_to_use = int(self.num_of_threads.value())
         QtCore.QCoreApplication.instance().quit()
-
 
 
 class MyWin(QtWidgets.QMainWindow, Ui_MainWindow):

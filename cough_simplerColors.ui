@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>532</width>
+    <width>529</width>
     <height>610</height>
    </rect>
   </property>
@@ -24,8 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(221, 231, 199, 255), stop:1 rgba(255, 255, 255, 255));
-
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(221, 231, 199, 255), stop:1 rgba(238, 248, 214, 255));
 border-radius: 10px
 </string>
     </property>
@@ -222,12 +221,12 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>530</width>
+       <width>531</width>
        <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(1, 32, 15, 100)</string>
+      <string notr="true">background-color: rgba(1, 32, 15, 100)</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -256,10 +255,10 @@ p, li { white-space: pre-wrap; }
        <string notr="true">QPushButton{ 
 border:none; 
 border-radius: 7px; 
-background-color: rgb(235, 157, 0);
+background-color:rgb(240, 135, 0);
 }
 QPushButton:hover{
-background-color: rgba(235, 157, 0, 150);
+background-color: rgba(240, 135, 0, 150);
 }</string>
       </property>
       <property name="text">
@@ -326,34 +325,6 @@ background-color: rgb(235,0,0, 150);
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="copy_citation">
-     <property name="geometry">
-      <rect>
-       <x>394</x>
-       <y>572</y>
-       <width>121</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton{ 
-border:none; 
-border-radius: 7px; 
-background-color: rgb(200, 130, 0);
-}
-QPushButton:hover{
-background-color: rgb(200, 130, 0, 150);
-}</string>
-     </property>
-     <property name="text">
-      <string>Copy citation</string>
-     </property>
-    </widget>
     <widget class="QPlainTextEdit" name="cite_label">
      <property name="geometry">
       <rect>
@@ -386,7 +357,7 @@ Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, &quot;A Universal System 
       <rect>
        <x>160</x>
        <y>420</y>
-       <width>220</width>
+       <width>221</width>
        <height>60</height>
       </rect>
      </property>
@@ -403,17 +374,46 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(172, 194, 170, 255), stop:1 rgba(255, 255, 255, 255));
-}</string>
+}
+
+QPushButton:disabled{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(172, 194, 170, 10), stop:1 rgba(255, 255, 255, 10));
+}
+
+</string>
      </property>
      <property name="text">
       <string>Run</string>
      </property>
     </widget>
-    <zorder>frame_2</zorder>
-    <zorder>frame_3</zorder>
-    <zorder>cite_label</zorder>
-    <zorder>copy_citation</zorder>
-    <zorder>btn_run</zorder>
+    <widget class="QPushButton" name="copy_citation_2">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>570</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{ 
+border:0.5px solid grey; 
+border-radius: 7px; 
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(60, 137, 109, 255), stop:1 rgba(60, 137, 109, 100));
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(172, 194, 170, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+     </property>
+     <property name="text">
+      <string>Copy citation</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

@@ -20,7 +20,7 @@ After installation, "anaconda prompt" will show up in the program list.
 ## Running the algorithm on your data
 The system should be ready to run by now. You can run the tool by calling "run_cough_detection.py" function.
 1) Open anaconda prompt and navigate to the source code.
-2) Run the code by passing as argument the path of the folder which contains the recordings to be analyzed.
+2a) Run the command line version by passing as argument the path of the folder which contains the recordings to be analyzed.
 For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply type (in anaconda prompt):
     ```sh
     python run_cough_detection.py D:/audio/domestic_recordings/
@@ -30,9 +30,14 @@ For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply t
 
 	* **Number of threads** to be used. For example, if we want to engage 8 threads, we can type:
         ```sh
-        python detect_chainsaw.py D:/audio/domestic_recordings/ -t 8
+        python run_cough_detection.py D:/audio/domestic_recordings/ -t 8
         ```
-	        
+2b) Run the graphical version of the tool to configure the wav folder and the number of threads by running: 
+		```sh
+        python run_cough_detection_gui.py
+        ```
+	After clicking "Run", GUI will disappear and execution continues on command prompt.
+
 ## OUTPUT 
 A folder named `CoughDetections` is created and all results are stored there. For each `.wav` file in the input folder, if one or more coughs are detected:
 1) A `.txt` file will be exported which contains each cough instance's timestamp as well as the corresponding level of confidence the classifier has. 

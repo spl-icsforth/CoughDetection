@@ -309,7 +309,9 @@ class Ui_MainWindow(QtWidgets.QWidget):
         QtCore.QCoreApplication.instance().quit()
 
 
+
 class MyWin(QtWidgets.QMainWindow, Ui_MainWindow):
+    #Stack over flow - draggable window
     def __init__(self):
         super().__init__()
         self.setupUi(self)

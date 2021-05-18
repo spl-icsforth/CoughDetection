@@ -1,6 +1,7 @@
 # A Universal System for Cough Detection in Domestic Acoustic Environments
  **Nikonas Simou¹,Nikolaos Stefanakis¹², Konstantinos Psaroulakis¹**
 > **¹** FORTH-ICS, Heraklion, Crete, Greece, GR-70013
+> 
 > **²** Hellenic Mediterranean University, Department of Music Technology and Acoustics, Rethymno, Greece, GR-74100
 
 -----
@@ -30,7 +31,7 @@ For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply t
 
 	* **Number of threads** to be used. For example, if we want to engage 8 threads, we can type:
         ```sh
-        python detect_chainsaw.py D:/audio/domestic_recordings/ -t 8
+        python run_cough_detection.py D:/audio/domestic_recordings/ -t 8
         ```
 	        
 ## OUTPUT 

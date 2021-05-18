@@ -546,6 +546,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
         # self.copied_lbl_txt.set("(Copied!)")
 
     def export_xlsx(self):
+        if self.filelist.currentText()=="Select file":
+            return
         import os
         fname = f'CoughResults/{self.filelist.currentText().replace(".wav", ".xlsx")}'
         i=1
@@ -559,6 +561,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
             f"File saved as\n{fname}", QtWidgets.QMessageBox.Ok)
         
     def export_txt(self):
+        if self.filelist.currentText()=="Select file":
+            return
         import os
         fname = f'CoughResults/{self.filelist.currentText().replace(".wav", ".txt")}'
         i=1
@@ -580,6 +584,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         found = glob.glob(f"{cwd}/CoughResults/*.txt")
         files = glob.glob(f"{wav_folder}/**/*.wav", recursive=True)
         self.df = pd.DataFrame()
+        self.results.setPlainText("Please select a file to view cough segments detected.")
         if len(found)==0:
             self.filelist.addItem("-")
             self.results.setPlainText("No coughs found.")
@@ -587,7 +592,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.res_text = dict()
             self.extracted_wavs = dict()
             self.filelist.addItem("Select file")
-            self.res_text["Select file"]="Please select a file from the dropdown menu to view cough segments detected."
+            self.res_text["Select file"]="Please select a file to view cough segments detected."
             for f in found:
                 cc = f.replace("\\", "/").split("/")[-1].split("_coughDetections.txt")[0]
                 self.filelist.addItem(cc)
@@ -597,8 +602,15 @@ class Ui_MainWindow(QtWidgets.QWidget):
 
     def change_results(self):
         self.results.setPlainText(self.res_text[self.filelist.currentText()])
-    
+        check=self.filelist.currentText()!="Select file"
+        self.btn_listen.setEnabled(check)
+        self.btn_xlsx.setEnabled(check)
+        self.btn_txt.setEnabled(check)
+
+
     def listen_active_wav(self):
+        if self.filelist.currentText()=="Select file":
+            return
         from playsound import playsound
         playsound(self.extracted_wavs[self.filelist.currentText()])
 

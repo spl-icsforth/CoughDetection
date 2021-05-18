@@ -456,7 +456,7 @@ border-radius: 10px
          <x>20</x>
          <y>80</y>
          <width>490</width>
-         <height>361</height>
+         <height>371</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -474,7 +474,7 @@ border-radius: 10px
           <x>230</x>
           <y>10</y>
           <width>251</width>
-          <height>31</height>
+          <height>61</height>
          </rect>
         </property>
         <property name="font">
@@ -521,7 +521,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>90</y>
           <width>151</width>
           <height>16</height>
          </rect>
@@ -540,9 +540,9 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>90</y>
+          <y>120</y>
           <width>471</width>
-          <height>251</height>
+          <height>231</height>
          </rect>
         </property>
         <property name="font">
@@ -557,9 +557,9 @@ p, li { white-space: pre-wrap; }
        <widget class="QComboBox" name="filelist">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>60</y>
-          <width>251</width>
+          <x>150</x>
+          <y>90</y>
+          <width>331</width>
           <height>22</height>
          </rect>
         </property>
@@ -571,7 +571,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>330</x>
-          <y>280</y>
+          <y>290</y>
           <width>141</width>
           <height>51</height>
          </rect>

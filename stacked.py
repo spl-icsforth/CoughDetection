@@ -585,9 +585,15 @@ class Ui_MainWindow(QtWidgets.QWidget):
         files = glob.glob(f"{wav_folder}/**/*.wav", recursive=True)
         self.df = pd.DataFrame()
         self.results.setPlainText("Please select a file to view cough segments detected.")
+        self.results.setReadOnly(True)
+        self.btn_listen.hide()
+        self.btn_xlsx.hide()
+        self.btn_txt.hide()
+            
         if len(found)==0:
             self.filelist.addItem("-")
             self.results.setPlainText("No coughs found.")
+            self.filelist.setEnabled(False)
         else:
             self.res_text = dict()
             self.extracted_wavs = dict()
@@ -603,9 +609,17 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def change_results(self):
         self.results.setPlainText(self.res_text[self.filelist.currentText()])
         check=self.filelist.currentText()!="Select file"
-        self.btn_listen.setEnabled(check)
-        self.btn_xlsx.setEnabled(check)
-        self.btn_txt.setEnabled(check)
+        if check:
+            self.btn_listen.hide()
+            self.btn_xlsx.hide()
+            self.btn_txt.hide()
+        else:
+            self.btn_listen.show()
+            self.btn_xlsx.show()
+            self.btn_txt.show()
+        # self.btn_listen.setEnabled(check)
+        # self.btn_xlsx.setEnabled(check)
+        # self.btn_txt.setEnabled(check)
 
 
     def listen_active_wav(self):

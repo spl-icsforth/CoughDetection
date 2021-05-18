@@ -1,11 +1,6 @@
-''' -*- coding: utf-8 -*-
-UI creation and maintenance: Konstantinos Psaroulakis (psar@ics.forth.gr)
-
-# Form implementation generated from reading ui file 'stacked.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
+'''
+This file contains all the needed classes and functions for the ui version of the tool
+By running this file, GUI vresion of the tool starts. For detailed instructions, please check the readme.md of the repository.
 '''
 
 from PyQt5 import QtCore, QtGui, QtWidgets

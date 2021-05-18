@@ -1,6 +1,7 @@
 argparse
 audioread
 soundfile
+playsound
 pandas
 librosa
 tensorflow >= 2.0

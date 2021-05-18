@@ -3,6 +3,7 @@ audioread
 soundfile
 playsound
 pandas
+openpyxl
 librosa
 tensorflow >= 2.0
 PyQt5

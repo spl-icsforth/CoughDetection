@@ -544,11 +544,30 @@ class Ui_MainWindow(QtWidgets.QWidget):
         clipboard.setText(citation)
         # self.parent.update() # the text will stay there after the window is closed
         # self.copied_lbl_txt.set("(Copied!)")
-        
+
     def export_xlsx(self):
-        pass
+        import os
+        fname = f'CoughResults/{self.filelist.currentText().replace(".wav", ".xlsx")}'
+        i=1
+        if os.path.exists(fname):
+            fname = fname.replace(".xlsx", f"_{i}.xlsx")
+            while os.path.exists(fname):
+                i+=1
+                fname = fname.replace(f"_{i-1}.xlsx", f"_{i}.xlsx")
+        self.df.to_excel(fname)
+        
     def export_txt(self):
-        pass
+        import os
+        fname = f'CoughResults/{self.filelist.currentText().replace(".wav", ".txt")}'
+        i=1
+        if os.path.exists(fname):
+            fname = fname.replace(".txt", f"_{i}.txt")
+            while os.path.exists(fname):
+                i+=1
+                fname = fname.replace(f"_{i-1}.txt", f"_{i}.txt")
+        with open(fname, 'w+') as file:
+            file.write(self.df.to_string())
+
 
     def initialize_files(self):
         import glob, os, pandas as pd, numpy as np
@@ -556,6 +575,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
         cwd = os.getcwd().replace("\\", "/")
         found = glob.glob(f"{cwd}/CoughResults/*.txt")
         files = glob.glob(f"{wav_folder}/**/*.wav", recursive=True)
+        self.df = pd.DataFrame()
         if len(found)==0:
             self.filelist.addItem("-")
             self.results.setPlainText("No coughs found.")
@@ -564,12 +584,11 @@ class Ui_MainWindow(QtWidgets.QWidget):
             self.extracted_wavs = dict()
             self.filelist.addItem("Select file")
             self.res_text["Select file"]="Please select a file from the dropdown menu to view cough segments detected."
-
             for f in found:
                 cc = f.replace("\\", "/").split("/")[-1].split("_coughDetections.txt")[0]
                 self.filelist.addItem(cc)
-                df = pd.DataFrame(np.loadtxt(f)[:,1:], columns=["Time (s)", "Confidence"], index=np.loadtxt(f)[:,0].astype(int)) 
-                self.res_text[cc] = df.to_string()
+                self.df = pd.DataFrame(np.loadtxt(f)[:,1:], columns=["Time (s)", "Confidence"], index=np.loadtxt(f)[:,0].astype(int)) 
+                self.res_text[cc] = self.df.to_string()
                 self.extracted_wavs[cc] = f.replace(".txt", ".wav") #[fn for fn in files if cc in fn][0]
 
     def change_results(self):

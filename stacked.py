@@ -528,7 +528,7 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def on_closing(self):
         import gc
 
-        reply = QtWidgets.QMessageBox.question(self, 'Message',
+        reply = QtWidgets.QMessageBox.question(self, 'Quit',
             "Are you sure to quit?", QtWidgets.QMessageBox.Yes | 
             QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.No)
 
@@ -555,6 +555,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
                 i+=1
                 fname = fname.replace(f"_{i-1}.xlsx", f"_{i}.xlsx")
         self.df.to_excel(fname)
+        QtWidgets.QMessageBox.information(self, 'Save succesful!',
+            f"File saved as\n{fname}", QtWidgets.QMessageBox.Ok)
         
     def export_txt(self):
         import os
@@ -567,6 +569,8 @@ class Ui_MainWindow(QtWidgets.QWidget):
                 fname = fname.replace(f"_{i-1}.txt", f"_{i}.txt")
         with open(fname, 'w+') as file:
             file.write(self.df.to_string())
+        QtWidgets.QMessageBox.information(self, 'Save succesful!',
+            f"File saved as\n{fname}", QtWidgets.QMessageBox.Ok)
 
 
     def initialize_files(self):
@@ -597,7 +601,6 @@ class Ui_MainWindow(QtWidgets.QWidget):
     def listen_active_wav(self):
         from playsound import playsound
         playsound(self.extracted_wavs[self.filelist.currentText()])
-        # QtMultimedia.QSound.play(filename)
 
     def run_main(self):
         global wav_folder, n_threads_to_use
@@ -639,5 +642,5 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     w = MyWin()
     w.show()
-    app.exec()
+    sys.exit(app.exec())
 

@@ -647,7 +647,10 @@ class MyWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.dragPos = QtCore.QPoint()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
-        self.setWindowIcon(QtGui.QIcon('forth_disk.png'))
+        try:
+            self.setWindowIcon(QtGui.QIcon('resources_forth_disk.png'))
+        except:
+            pass
     def mousePressEvent(self, event):                                 # +
         self.dragPos = event.globalPos()
         

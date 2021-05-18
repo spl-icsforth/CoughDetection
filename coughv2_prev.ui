@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
-    <height>550</height>
+    <width>531</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>531</width>
-      <height>551</height>
+      <width>530</width>
+      <height>610</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -38,11 +38,16 @@ border-radius: 10px
     <widget class="QPushButton" name="btn_run">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>430</y>
-       <width>221</width>
-       <height>91</height>
+       <x>156</x>
+       <y>420</y>
+       <width>220</width>
+       <height>60</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{ 
@@ -55,14 +60,14 @@ background-color: rgb(88, 255, 107, 150);
 }</string>
      </property>
      <property name="text">
-      <string>RUN</string>
+      <string>Run</string>
      </property>
     </widget>
     <widget class="QFrame" name="frame_2">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>80</y>
+       <y>60</y>
        <width>511</width>
        <height>341</height>
       </rect>
@@ -79,11 +84,19 @@ background-color: rgb(88, 255, 107, 150);
      <widget class="QPushButton" name="btn_dir">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>90</x>
         <y>10</y>
         <width>151</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{ 
@@ -109,6 +122,11 @@ Directory</string>
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgb(255, 255, 255)</string>
       </property>
@@ -116,18 +134,24 @@ Directory</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[Please select a directory]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;[Please select a directory]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>360</x>
         <y>70</y>
         <width>141</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <underline>true</underline>
+       </font>
       </property>
       <property name="text">
        <string>Number of threads:</string>
@@ -142,6 +166,11 @@ p, li { white-space: pre-wrap; }
         <height>121</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgb(255, 255, 255)</string>
       </property>
@@ -149,8 +178,8 @@ p, li { white-space: pre-wrap; }
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;[No directory selected]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;[No directory selected]&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -158,9 +187,17 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>30</x>
         <y>80</y>
-        <width>151</width>
+        <width>161</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+        <underline>true</underline>
+       </font>
       </property>
       <property name="text">
        <string>Directory with wav files:</string>
@@ -174,6 +211,12 @@ p, li { white-space: pre-wrap; }
         <width>151</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+        <underline>true</underline>
+       </font>
       </property>
       <property name="text">
        <string>Files to be processed:</string>
@@ -199,26 +242,13 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-    <widget class="QTextBrowser" name="textBrowser">
-     <property name="geometry">
-      <rect>
-       <x>146</x>
-       <y>34</y>
-       <width>241</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(221, 249, 249)</string>
-     </property>
-    </widget>
     <widget class="QFrame" name="frame_3">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>531</width>
-       <height>31</height>
+       <width>530</width>
+       <height>30</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -230,60 +260,53 @@ p, li { white-space: pre-wrap; }
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="btn_max">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>10</y>
-        <width>21</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{ 
-border:none; 
-border-radius: 7px; 
-background-color: rgb(200, 130, 0);
-}
-QPushButton:hover{
-background-color: rgb(200, 130, 0, 150);
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn_min">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>10</y>
-        <width>21</width>
-        <height>16</height>
+        <x>470</x>
+        <y>5</y>
+        <width>20</width>
+        <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{ 
 border:none; 
 border-radius: 7px; 
-background-color: rgb(85, 255, 127);
+background-color: rgb(235, 157, 0);
 }
 QPushButton:hover{
-background-color: rgb(85, 255, 127, 150);
+background-color: rgba(235, 157, 0, 150);
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>_</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_exit">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>10</y>
-        <width>21</width>
-        <height>16</height>
+        <x>500</x>
+        <y>5</y>
+        <width>20</width>
+        <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Corbel</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{ 
@@ -296,10 +319,86 @@ background-color: rgb(235,0,0, 150);
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>X</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>-3</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cough Detection Tool (v 1.0)</string>
       </property>
      </widget>
     </widget>
+    <widget class="QPushButton" name="copy_citation">
+     <property name="geometry">
+      <rect>
+       <x>414</x>
+       <y>572</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{ 
+border:none; 
+border-radius: 7px; 
+background-color: rgb(200, 130, 0);
+}
+QPushButton:hover{
+background-color: rgb(200, 130, 0, 150);
+}</string>
+     </property>
+     <property name="text">
+      <string>Copy citation</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="cite_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>500</y>
+       <width>510</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>10</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>Did you find this tool useful? Please cite as:
+Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, &quot;A Universal System for Cough Detection in Domestic Acoustic Environments&quot; in EUSIPCO 2020.</string>
+     </property>
+    </widget>
+    <zorder>btn_run</zorder>
+    <zorder>frame_2</zorder>
+    <zorder>frame_3</zorder>
+    <zorder>cite_label</zorder>
+    <zorder>copy_citation</zorder>
    </widget>
   </widget>
  </widget>

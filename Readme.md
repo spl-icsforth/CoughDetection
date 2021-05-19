@@ -96,7 +96,7 @@ Copyright (c) 2021 **Nikonas Simou, Nikolaos Stefanakis, Konstantinos Psaroulaki
 --------
 ### How to reference
 If you find any of this library useful for your research, please give cite as:
-Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, ["A Universal System for Cough Detection in Domestic Acoustic Environments"](https://ieeexplore.ieee.org/document/9287659) in EUSIPCO 2020.
+Nikonas Simou; Nikolaos Stefanakis; Panagiotis Zervas, ["A Universal System for Cough Detection in Domestic Acoustic Environments"] in EUSIPCO 2020.
 
 
 #### Important notes:
@@ -109,3 +109,4 @@ The default value for `maxDur` is set to 600 seconds.
 
 
  [anaconda]: <https://anaconda.org/>
+ ["A Universal System for Cough Detection in Domestic Acoustic Environments"]: <https://ieeexplore.ieee.org/document/9287659>

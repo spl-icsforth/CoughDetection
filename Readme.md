@@ -29,7 +29,9 @@ For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply t
 	    ```sh
 	    python run_cough_detection.py D:/audio/domestic_recordings/
 	    ```
+	    
 	<img src="doc/images/2.png" width="500">
+	
 	* The path of the folder which contains the recordings is the only mandatory input argument.
 	* An additional parameter is:
 
@@ -37,7 +39,6 @@ For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply t
         ```sh
         python run_cough_detection.py D:/audio/domestic_recordings/ -t 8
         ```
-	c.	Αφού περιμένετε κάποιο χρόνο, ανάλογο της ποσότητας των αρχείων προς ανάλυση, η εκτέλεση θα ολοκληρωθεί και μπορείτε να δείτε τα αποτελέσματα που έχουν τυπωθεί στο anaconda prompt. Eάν δε χρειάζεστε άλλο το εργαλείο, μπορείτε σε εκείνο το σημείο να κλείσετε το anaconda prompt.
 	
 	* After waiting an amount of time a proportionate to the number of input files, execution will be completed and you will see results printed in anaconda prompt. If you finished the analysis, you can quit anaconda prompt. 
 	
@@ -53,27 +54,33 @@ For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply t
 	* Click «Select directory» to choose the directory which contains the input files for the algorithm. A file dialog will open and you can navigate through your drives to find desired folder. (Note: Apart from the selected root directory, .wav files from all the subdirectories will also be included.
 
 	* After choosing the desired directory, .wav files that are going to be processed will appear in the text box  «Files to be processed» and button "Run" will be activated. In case you have selected wrong directory, you can change by clicking «Change directory». You can also choose the number of threads to be used for the execution.
+	
        <img src="doc/images/7.png" width="400">
 
 	* After clicking "Run", GUI will disappear and execution continues on command prompt.
-	<img src="doc/images/8.png" width="500">
+	
+		<img src="doc/images/8.png" width="500">
 	
 	* When execution finishes, GUI will appear again presenting the results. 
-	<img src="doc/images/11.png" width="400">
+	
+		<img src="doc/images/11.png" width="400">
 	
 	* Click "Select file" to activate the dropdown menu and navigate through results.
-	<img src="doc/images/12.png" width="400">
+		<img src="doc/images/12.png" width="400">
 
 	* When you select a file, all cough detections in this file will be presented in the followed text box. The three columns correspond to index, onset time, confident (How "sure" was the classifier about this detection). You can listen all cough detections from this wav file (merged) by clicking "Click to listen detections". 
 	
 	* If you click "Save as .txt", "Save as .xlsx", current showing results will be saved in the corresponding filetype and a message with the directory and the filename of the saved file will pop up.
-	<img src="doc/images/13.png" width="400">
+	
+		<img src="doc/images/13.png" width="400">
 	
 	* An example of an excel file exported through the tool:
-	<img src="doc/images/14.png" width="200">
 	
-	*In case the following screen appeared after execution of the tool, no cough segments were detected through the analysis.
-	<img src="doc/images/10nores.png" width="400">
+		<img src="doc/images/14.png" width="200">
+	
+	* In case the following screen appeared after execution of the tool, no cough segments were detected through the analysis.
+	
+		<img src="doc/images/10nores.png" width="400">
 	
 	
 

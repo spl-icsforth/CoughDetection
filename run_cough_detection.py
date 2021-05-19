@@ -4,6 +4,8 @@ import argparse
 from tensorflow.keras.models import load_model
 from pathlib import Path
 import time
+import sys
+sys.path.append("./lib/")
 from ClipCoughDetector import ClipCoughDetector
 
 ''' Given as input a folder, this script searches for .wav files for cough 
@@ -47,7 +49,7 @@ def main():
     wav_path_list = [
         str(wav_path) for wav_path in Path(wav_folder).rglob('*.wav')]
     
-    model = load_model('./rnn_mel_entire.hdf5')
+    model = load_model('./lib/models/rnn_mel_entire.hdf5')
     timeStart = time.time()
     cough_detector = ClipCoughDetector(model)
       	

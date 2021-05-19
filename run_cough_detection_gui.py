@@ -31,6 +31,8 @@ def main(wav_folder, n_threads_to_use=4):
     from tensorflow.keras.models import load_model
     from pathlib import Path
     import time
+    import sys
+    sys.path.append("./lib/")
     from ClipCoughDetector import ClipCoughDetector
     
     print('Using a maximum of',n_threads_to_use,' threads')
@@ -39,7 +41,7 @@ def main(wav_folder, n_threads_to_use=4):
     wav_path_list = [
         str(wav_path) for wav_path in Path(wav_folder).rglob('*.wav')]
     
-    model = load_model('./rnn_mel_entire.hdf5')
+    model = load_model('./lib/models/rnn_mel_entire.hdf5')
     timeStart = time.time()
     cough_detector = ClipCoughDetector(model)
         
@@ -648,7 +650,7 @@ class MyWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
         try:
-            self.setWindowIcon(QtGui.QIcon('resources_forth_disk.png'))
+            self.setWindowIcon(QtGui.QIcon('resources/forth_disk.png'))
         except:
             pass
     def mousePressEvent(self, event):                                 # +

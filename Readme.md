@@ -1,6 +1,7 @@
 # A Universal System for Cough Detection in Domestic Acoustic Environments
  **Nikonas Simou¹,Nikolaos Stefanakis¹², Konstantinos Psaroulakis¹**
 > **¹** FORTH-ICS, Heraklion, Crete, Greece, GR-70013
+> 
 > **²** Hellenic Mediterranean University, Department of Music Technology and Acoustics, Rethymno, Greece, GR-74100
 
 -----
@@ -20,23 +21,24 @@ After installation, "anaconda prompt" will show up in the program list.
 ## Running the algorithm on your data
 The system should be ready to run by now. You can run the tool by calling "run_cough_detection.py" function.
 1) Open anaconda prompt and navigate to the source code.
-2a) Run the command line version by passing as argument the path of the folder which contains the recordings to be analyzed.
+2) 1) Run the command line version by passing as argument the path of the folder which contains the recordings to be analyzed.
 For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply type (in anaconda prompt):
-    ```sh
-    python run_cough_detection.py D:/audio/domestic_recordings/
-    ```
-* The path of the folder which contains the recordings is the only mandatory input argument.
-* An additional parameter is:
+	    ```sh
+	    python run_cough_detection.py D:/audio/domestic_recordings/
+	    ```
+	* The path of the folder which contains the recordings is the only mandatory input argument.
+	* An additional parameter is:
 
 	* **Number of threads** to be used. For example, if we want to engage 8 threads, we can type:
         ```sh
         python run_cough_detection.py D:/audio/domestic_recordings/ -t 8
         ```
-2b) Run the graphical version of the tool to configure the wav folder and the number of threads by running: 
+   2) Run the graphical version of the tool by running: 
 		```sh
-        python run_cough_detection_gui.py
-        ```
-	After clicking "Run", GUI will disappear and execution continues on command prompt.
+		python run_cough_detection_gui.py
+		```	
+	- After clicking "Run", GUI will disappear and execution continues on command prompt.
+	- When execution finishes, GUI will appear again presenting the results. You can navigate through results, listen cough detections and save onset times through the buttons on the UI.
 
 ## OUTPUT 
 A folder named `CoughDetections` is created and all results are stored there. For each `.wav` file in the input folder, if one or more coughs are detected:

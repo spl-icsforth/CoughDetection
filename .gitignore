@@ -1,0 +1,6 @@
+
+*.pyc
+*.wav
+*.txt
+drafts/
+documentation/

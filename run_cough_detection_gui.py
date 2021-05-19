@@ -650,7 +650,7 @@ class MyWin(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground, True)
         try:
-            self.setWindowIcon(QtGui.QIcon('resources/forth_disk.png'))
+            self.setWindowIcon(QtGui.QIcon('./lib/resources/forth_disk.png'))
         except:
             pass
     def mousePressEvent(self, event):                                 # +

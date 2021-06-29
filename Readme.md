@@ -48,8 +48,7 @@ For example, if the path is "D:/audio/domestic_recordings", then we can simply t
 		```sh
 		python run_cough_detection_gui.py
 		```	
-	<!-- - ![First Ui Screen](doc/images/6.PNG) -->
-		<img src="doc/images/6.png" width="400">
+	<img src="doc/images/6.png" width="400">
 	
 	* Click «Select directory» to choose the directory which contains the input files for the algorithm. A file dialog will open and you can navigate through your drives to find desired folder. (Note: Apart from the selected root directory, .wav files from all the subdirectories will also be included.
 

@@ -25,7 +25,7 @@ The system should be ready to run by now. You can run the tool by calling "run_c
 	<img src="doc/images/3.png" width="500">
 
 2) 1) Run the command line version by passing as argument the path of the folder which contains the recordings to be analyzed.
-For example, if the path is "D:/audio/saw_recordings/RP10", then we can simply type (in anaconda prompt):
+For example, if the path is "D:/audio/domestic_recordings", then we can simply type (in anaconda prompt):
 	    ```sh
 	    python run_cough_detection.py D:/audio/domestic_recordings/
 	    ```

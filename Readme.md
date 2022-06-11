@@ -1,5 +1,5 @@
 # A Universal System for Cough Detection in Domestic Acoustic Environments
- **Nikonas Simou¹,Nikolaos Stefanakis¹², Konstantinos Psaroulakis¹**
+ **Nikonas Simou¹,Nikolaos Stefanakis¹², Konstantinos Psaroulakis¹, Panagiotis Zervas²**
 > **¹** FORTH-ICS, Heraklion, Crete, Greece, GR-70013
 > 
 > **²** Hellenic Mediterranean University, Department of Music Technology and Acoustics, Rethymno, Greece, GR-74100
